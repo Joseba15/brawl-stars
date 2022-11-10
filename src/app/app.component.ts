@@ -5,6 +5,22 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'basesAngular';
+  title: string = 'Contador';
+  base : number = 10;
+  contador : number =0;
+
+  incrementar() {
+    this.contador+=this.base;
+  }
+
+  decrementar() {
+    this.contador-=this.base;
+  }
+
+  aggregate(value :number){
+    this.contador += value;
+  }
+
 }

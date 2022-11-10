@@ -1,0 +1,19 @@
+<h1>Listado de alumnos</h1>
+
+<ul>
+    <li *ngFor="let alumno of listaAlumnos; let i = index; let par=even; let impar=odd"
+    [ngClass]="{par:par,impar:impar}"> {{i+1}}  - {{alumno}}</li>
+</ul>
+
+<button (click)="cambiarLista()">Boton</button>
+
+<h3 *ngIf="listanueva.length>0 ; else malo" >Aprobados</h3>
+
+<ng-template #malo>
+    <h3>No hay nadie aprobado killo</h3>
+</ng-template>
+
+
+<ul>
+    <li *ngFor="let nuevo of listanueva; let i = index "> {{i+1}}  - {{nuevo}}</li>
+</ul>
