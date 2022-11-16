@@ -13,7 +13,7 @@ import { BrawlStarsModule } from './brawl-stars/brawl-stars.module';
     AppComponent,
     ContadorComponent,
     ListaComponent,
-    
+
   ],
   imports: [
     BrowserModule,
