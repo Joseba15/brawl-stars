@@ -2,7 +2,10 @@
 <hr>
 <ul>
     <li
-     *ngFor="let item of characters "
+     *ngFor="let item of character "
         [ngClass]="{green: item.health>=3000, red: item.health<1000,  yellow: item.health>=1000
-             && item.health<3000}">{{item.name}} - {{item.health}} </li>
+             && item.health<3000}">{{item.name}} - {{item.health}}
+             
+    <button >Borrar</button> 
+    </li>
 </ul>

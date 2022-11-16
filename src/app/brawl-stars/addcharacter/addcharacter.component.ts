@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,EventEmitter ,Input, OnInit, Output } from '@angular/core';
 import { Character } from '../interfaces/characters';
+import { BSService } from '../services/brawl-stars.service';
 
 @Component({
   selector: 'app-addcharacter',
@@ -7,25 +8,21 @@ import { Character } from '../interfaces/characters';
   styleUrls: ['./addcharacter.component.css']
 })
 export class AddcharacterComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private bsService:BSService) { 
+    
+  }
 
   ngOnInit(): void {
   }
 
+  @Input() nuevo: Character= {name:'', health:0}
+  
   
   addCharacter(){
-    let personaje{
-      @Input nuevo: Character= {name:'', health:0}
-    
-      @Input personajes: Character[]=[]
-      let add={name:this.nuevo.name, health: this.nuevo.health}
-
-
-    }
-    
-    this.characters.push(this.personaje)
-  
+    this.bsService.addCharacter({...this.nuevo})
+    this.nuevo.name='';
+    this.nuevo.health=0;
   }
 
 }

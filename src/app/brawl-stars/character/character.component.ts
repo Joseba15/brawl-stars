@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Character } from '../interfaces/characters';
+import { BSService } from '../services/brawl-stars.service';
 
 
 
@@ -10,12 +11,18 @@ import { Character } from '../interfaces/characters';
 })
 export class CharacterComponent implements OnInit {
 
-  constructor() { }
+  //characters :Character[] = []
+  constructor(private bsService :BSService) { 
+    //this.characters=this.bsService.personajes;
+
+
+  }
 
   ngOnInit(): void {
   }
 
-  @Input() character: Character[]=[];
-
+  get  character():Character []{
+    return this.bsService.personajes
+  }
 
 }
